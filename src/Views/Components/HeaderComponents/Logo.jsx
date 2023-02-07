@@ -9,7 +9,7 @@ const Logo = () => (
         </div>
         <div id="h-instagram-area">
             <a href="#">
-                <img src="assets/img/logo 1.svg" alt="instagram" />
+                <img src="assets/img/logo 1.svg" alt="instagram" id="instagram-logo"/>
             </a>
         </div>
     </div>

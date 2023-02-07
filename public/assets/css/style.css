@@ -55,8 +55,7 @@ a {
 
 #header {
     border-bottom: 1px solid #DBDBDB;
-    padding-left: 216px;
-    padding-right: 218px;
+    width:100%;
     background-color: #fff;
     position: sticky;
     top: 0;
@@ -95,6 +94,10 @@ a {
     align-items: center;
 }
 
+#h-logo-icon {
+    max-width:none;
+}
+
 #h-logo-area {
     border-right: 1px solid #DBDBDB;
     padding-right: 11px;
@@ -102,6 +105,10 @@ a {
 
 #h-instagram-area {
     padding-left: 11px;
+}
+
+#instagram-logo{
+    max-width:none;
 }
 
 /* Main Area */
@@ -196,9 +203,16 @@ a {
 
 /* Suggestions Area */
 
-.s-userinfo-area {
+.s-userinfo-area,
+.username-area{
     display: flex;
     align-items: center;
+    gap:10px;
+}
+
+.s-userinfo .username-area ion-icon{
+    cursor:pointer;
+    font-size:20px;
 }
 
 .s-userinfo-area img {
@@ -206,18 +220,27 @@ a {
 }
 
 .s-userinfo {
-    line-height: .3;
     font-size: 0.875rem;
 }
 
 .s-userinfo p:first-child {
     font-weight: 500;
+    max-width:200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.s-userinfo input:disabled{
+    background-color:transparent;
+    border:0;
+    color:black;
 }
 
 .s-userinfo p:last-child {
     color: #8E8E8E;
+    margin-top:-10px;
 }
-
 
 #suggest-content {
     margin-left: 29px;

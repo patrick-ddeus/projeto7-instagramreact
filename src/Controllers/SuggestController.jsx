@@ -1,8 +1,8 @@
 import React from "react";
-import suggestions from "../Models/suggestions";
+import SUGGESTION_HANDLER from "../Models/SuggestionStore";
 
 const SuggestList = () => (
-    suggestions.map((suggestion) => (
+    SUGGESTION_HANDLER.getSuggestions().map((suggestion) => (
         <li className="suggestions-li" key={suggestion.user}>
             <div className="suggestion-user">
                 <img src={suggestion.imgSrc} alt="" />

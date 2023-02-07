@@ -1,21 +1,22 @@
 import React from "react";
-import usersData from "../Models/usersData";
+import USER_HANDLER from "../Models/UsersData";
 import Post from "../Views/Components/PostsComponents/Post";
 
 const apiUnsplash = (imagem, size) => `https://source.unsplash.com/${size}/?${imagem}`;
+const usersData = USER_HANDLER.getUsersData()
+console.log(usersData)
 let totalUsers = usersData.length
 const usedIndexes = [];
 
 function generateRandomIndex(){
     let randomIndex = Math.round(Math.random() * (totalUsers - 1))
-    if((usedIndexes.includes(randomIndex))){
-        totalUsers--
-        randomIndex = Math.round(Math.random() * (totalUsers))
-    }
+    // while(usedIndexes.includes(randomIndex)){
+    //     randomIndex = Math.round(Math.random() * (totalUsers--))
+    //     continue
+    // }
     usedIndexes.push(randomIndex)
     return randomIndex
 }
-
 
 const PostsList = () => (
     usersData.map((_, index) => {
