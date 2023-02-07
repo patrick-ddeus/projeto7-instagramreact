@@ -18,12 +18,12 @@ function generateRandomIndex(){
 }
 
 const PostsList = () => (
-    usersData.map((_, index) => {
+    usersData.map((user, index) => {
         const randomNumber = generateRandomIndex()
         const randomUser = usersData[randomNumber]
         const randomPost = apiUnsplash(usersData[randomNumber].post, "614x614")
 
-        return < Post randomUser={randomUser} randomPost={randomPost} key={index} />
+        return < Post randomUser={randomUser} randomPost={randomPost} likes={user.likes}  key={index} />
     }
     )
 )

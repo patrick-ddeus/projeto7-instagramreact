@@ -312,6 +312,33 @@ a {
     margin-bottom: 60px;
 }
 
+.post-img{
+    position:relative;
+}
+
+.post-img .big-heart{
+    font-size:160px;
+    color:white;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition:scale .4s ease;
+    /* opacity:0; */
+    scale:.9;
+}
+
+.post-img .big-heart ion-icon{
+    color:white;
+    opacity:0;
+    transition:color .6s;
+}
+.post-img .big-heart.heartStyle ion-icon{
+    color:red;
+    opacity:1;
+    transition:color .6s;
+}
+
 .posts:first-child {
     margin-top: 24px;
 }
