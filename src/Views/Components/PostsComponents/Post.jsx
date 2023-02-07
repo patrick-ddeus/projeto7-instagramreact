@@ -33,7 +33,7 @@ const Post = ({ randomUser, randomPost, likes }) => {
                 </picture>
             </div>
             <footer>
-                <IconsArea />
+                <IconsArea liked={liked} />
                 <CommentArea randomUser={randomUser} likes={likes} />
             </footer>
         </article >

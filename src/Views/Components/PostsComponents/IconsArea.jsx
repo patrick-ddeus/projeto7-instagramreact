@@ -2,9 +2,9 @@ import React from "react";
 import SharedIcons from "./SharedIcons";
 import SaveIcon from "./SaveIcon";
 
-const IconsArea = () => (
+const IconsArea = ({liked}) => (
     <div className="icons-area flex-container">
-        <SharedIcons />
+        <SharedIcons liked={liked} />
         <SaveIcon />
     </div>
 

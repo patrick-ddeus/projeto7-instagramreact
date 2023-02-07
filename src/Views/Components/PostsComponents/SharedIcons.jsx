@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SharedIcons = () => (
-    <div className="shared-icons flex-container">
-        <a href="#">
-            <img src="assets/img/heart.svg" alt="" style={{width:"20px"}} />
-        </a>
-        <a href="#">
-            <img src="assets/img/chat.svg" alt="" />
-        </a>
-        <a href="#">
-            <img src="assets/img/send.svg" alt="" />
-        </a>
-    </div>
-)
+const SharedIcons = ({ liked }) => {
+    const [keepLike, setKeepLike] = useState(false)
+
+    return (
+        <div className="shared-icons flex-container">
+            <button onClick={() => setKeepLike(liked)}>
+                <ion-icon name={liked ? "heart" : "heart-outline"} style={{
+                    fontSize: "24px",
+                    color: `${liked ? "red" : "black"}`
+                }}></ion-icon>
+            </button>
+            <button>
+                <img src="assets/img/chat.svg" alt="" />
+            </button>
+            <button >
+                <img src="assets/img/send.svg" alt="" />
+            </button>
+        </div>
+    )
+}
 
 export default SharedIcons
