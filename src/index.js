@@ -1,11 +1,11 @@
 import ReactDOM from "react-dom/client"
-import NavBar from "./Views/Components/NavigationComponents/HeaderComponents/NavBar"
-import Main from "./Views/Components/NavigationComponents/HeaderComponents/Main"
+import Header from "./Views/Components/NavBar"
+import Main from "./Views/Components/Main"
 
 function App(){
   return(
     <div>
-      <NavBar />
+      <Header />
       <Main />
     </div>
   )
