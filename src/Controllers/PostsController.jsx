@@ -4,7 +4,6 @@ import Post from "../Views/Components/PostsComponents/Post";
 
 const apiUnsplash = (imagem, size) => `https://source.unsplash.com/${size}/?${imagem}`;
 const usersData = USER_HANDLER.getUsersData()
-console.log(usersData)
 let totalUsers = usersData.length
 const usedIndexes = [];
 
