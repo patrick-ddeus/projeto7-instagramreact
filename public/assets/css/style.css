@@ -325,16 +325,13 @@ a {
     font-size:160px;
     color:white;
     position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    transition:scale .4s ease;
-    /* opacity:0; */
-    scale:.9;
-    z-index:-1
+    top:37%;
+    left:37%;
+    z-index:-1;
 }
 
 .post-img .big-heart.heartStyle{
+    animation: scale-animation 0.4s ease;
     z-index:2;
 }
 
@@ -345,7 +342,6 @@ a {
     position:relative;
 }
 .post-img .big-heart.heartStyle ion-icon{
-    color:red;
     opacity:1;
     transition:color .6s; 
 }
@@ -400,6 +396,15 @@ a {
 /* .save-icon.salvo{
     /* color:blue;
 } */
+
+@keyframes scale-animation {
+    from{
+        transform:scale(.3);
+    }
+    to{
+        transform:scale(1)
+    }
+}
 
 /* Media Querry */
 

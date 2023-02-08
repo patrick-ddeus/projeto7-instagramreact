@@ -13,7 +13,7 @@ function handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, lik
         }
         setTimeout(() => {
             setLiked(liked) // false
-        }, 800)
+        }, 500)
     }
 }
 
@@ -25,16 +25,19 @@ const Post = ({ randomUser, randomPost, likes }) => {
     return (
         <article className="posts" >
             <HeaderPost randomuser={randomUser}/>
+            
             <div className="post-img" onDoubleClick={() => handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, likes)}>
                 <picture>
                     <img className="post-image" src={randomPost} alt="instagram-post" />
                     <LikeButton liked={liked} setLiked={setLiked} />
                 </picture>
             </div>
+
             <footer>
                 <IconsArea liked={keepLiked} setKeepLiked={setKeepLiked} likes={postLikes} setPostLikes={setPostLikes}/>
-                <CommentArea randomUser={randomUser} likes={Math.floor(postLikes)} />
+                <CommentArea randomUser={randomUser} likes={postLikes} />
             </footer>
+
         </article >
     )
 }
