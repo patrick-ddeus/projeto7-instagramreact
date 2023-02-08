@@ -314,6 +314,10 @@ a {
 
 .post-img{
     position:relative;
+}
+
+.post-image{
+    position:relative;
     z-index: 1;
 }
 
@@ -331,7 +335,7 @@ a {
 }
 
 .post-img .big-heart.heartStyle{
-    z-index:1;
+    z-index:2;
 }
 
 .post-img .big-heart ion-icon{
@@ -494,6 +498,7 @@ a {
     #menu-bottom {
         display: block;
         position: fixed;
+        z-index:999;
         bottom: 0;
         left: 0;
         width: 100vw;

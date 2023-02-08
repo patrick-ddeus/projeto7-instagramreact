@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-const SharedIcons = ({ liked }) => {
-    const [keepLike, setKeepLike] = useState(false)
+function handleClick(liked, setKeepLiked, likes, setPostLikes){
+    setKeepLiked(!liked)
+    if(!liked){
+        setPostLikes(Number(likes) + 1)
+    }else{
+        setPostLikes(Number(likes) - 1)
+    }
+}
 
+const SharedIcons = ({ liked , setKeepLiked, likes ,setPostLikes }) => {
     return (
         <div className="shared-icons flex-container">
-            <button onClick={() => setKeepLike(liked)}>
+            <button onClick={() => handleClick(liked, setKeepLiked, likes, setPostLikes)}>
                 <ion-icon name={liked ? "heart" : "heart-outline"} style={{
                     fontSize: "24px",
                     color: `${liked ? "red" : "black"}`

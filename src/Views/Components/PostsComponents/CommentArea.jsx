@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CommentArea = ({randomUser, likes}) => {
+    let [postLikes, setPostLikes] = useState(likes)
+    
     return (
     <div className="comment-area">
         <img src={randomUser.userAvatar} style={{width:"20px"}} alt="avatar do usuario"/>

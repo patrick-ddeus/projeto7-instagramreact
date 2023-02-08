@@ -2,39 +2,38 @@ import React, { useState } from "react";
 import CommentArea from "./CommentArea";
 import IconsArea from "./IconsArea";
 import LikeButton from "./LikeButton"
+import HeaderPost from "./HeaderPost"
 
-function handleHeart(setLiked, liked) {
-    setLiked(!liked)
+function handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, likes) {
+    setLiked(!liked) // true
+    setKeepLiked(true)
     if (!liked) {
+        if(Number(likes) === Number(postLikes)){
+            setPostLikes(Number(postLikes) + 1)
+        }
         setTimeout(() => {
-            setLiked(liked)
+            setLiked(liked) // false
         }, 800)
     }
 }
 
 const Post = ({ randomUser, randomPost, likes }) => {
     const [liked, setLiked] = useState(false);
+    const [keepLiked, setKeepLiked] = useState(false)
+    let [postLikes, setPostLikes] = useState(likes)
 
     return (
         <article className="posts" >
-            <header className="header-post">
-                <div className="user-info flex-container">
-                    <img src={randomUser.userAvatar} style={{ width: "32px" }} alt="user avatar" />
-                    <p>{randomUser.user}</p>
-                </div>
-                <a href={window.location.href}>
-                    <ion-icon name="ellipsis-horizontal-outline" style={{ width: "20px", marginRight: "18px", marginTop: "15px", color: "black" }} />
-                </a>
-            </header>
-            <div className="post-img" onDoubleClick={() => handleHeart(setLiked, liked)}>
+            <HeaderPost randomuser={randomUser}/>
+            <div className="post-img" onDoubleClick={() => handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, likes)}>
                 <picture>
-                    <img src={randomPost} alt="instagram-post" />
+                    <img className="post-image" src={randomPost} alt="instagram-post" />
                     <LikeButton liked={liked} setLiked={setLiked} />
                 </picture>
             </div>
             <footer>
-                <IconsArea liked={liked} />
-                <CommentArea randomUser={randomUser} likes={likes} />
+                <IconsArea liked={keepLiked} setKeepLiked={setKeepLiked} likes={postLikes} setPostLikes={setPostLikes}/>
+                <CommentArea randomUser={randomUser} likes={Math.floor(postLikes)} />
             </footer>
         </article >
     )

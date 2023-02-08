@@ -1,5 +1,5 @@
 import React from "react";
-import USER_HANDLER from "../Models/UsersData";
+import USER_HANDLER from "../Models/usersData";
 
 const StoriesList = () => (
     USER_HANDLER.getUsersData().map((user) => (
