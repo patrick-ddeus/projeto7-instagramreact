@@ -8,7 +8,7 @@ function handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, lik
     setLiked(!liked) // true
     setKeepLiked(true)
     if (!liked) {
-        if(Number(likes) === Number(postLikes)){
+        if (Number(likes) === Number(postLikes)) {
             setPostLikes(Number(postLikes) + 1)
         }
         setTimeout(() => {
@@ -23,18 +23,18 @@ const Post = ({ randomUser, randomPost, likes }) => {
     let [postLikes, setPostLikes] = useState(likes)
 
     return (
-        <article className="posts" >
-            <HeaderPost randomuser={randomUser}/>
-            
+        <article className="posts" data-test="post">
+            <HeaderPost randomuser={randomUser} />
+
             <div className="post-img" onDoubleClick={() => handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, likes)}>
                 <picture>
-                    <img className="post-image" src={randomPost} alt="instagram-post" />
+                    <img className="post-image" src={randomPost} alt="instagram-post" data-test="post-image" />
                     <LikeButton liked={liked} setLiked={setLiked} />
                 </picture>
             </div>
 
             <footer>
-                <IconsArea liked={keepLiked} setKeepLiked={setKeepLiked} likes={postLikes} setPostLikes={setPostLikes}/>
+                <IconsArea liked={keepLiked} setKeepLiked={setKeepLiked} likes={postLikes} setPostLikes={setPostLikes} />
                 <CommentArea randomUser={randomUser} likes={postLikes} />
             </footer>
 

@@ -12,7 +12,7 @@ function handleClick(liked, setKeepLiked, likes, setPostLikes){
 const SharedIcons = ({ liked , setKeepLiked, likes ,setPostLikes }) => {
     return (
         <div className="shared-icons flex-container">
-            <button onClick={() => handleClick(liked, setKeepLiked, likes, setPostLikes)}>
+            <button onClick={() => handleClick(liked, setKeepLiked, likes, setPostLikes)} data-test="like-post">
                 <ion-icon name={liked ? "heart" : "heart-outline"} style={{
                     fontSize: "24px",
                     color: `${liked ? "red" : "black"}`

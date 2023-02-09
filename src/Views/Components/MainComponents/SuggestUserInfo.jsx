@@ -19,11 +19,11 @@ const SuggestUserInfo = ({ username, nickname }) => {
 
     return (
     <div className="s-userinfo-area">
-        <img src={useAvatar} alt="" onClick={() => {changeUserAvatar(useAvatar, setUserAvatar)}}/>
+        <img src={useAvatar} alt="" onClick={() => {changeUserAvatar(useAvatar, setUserAvatar)}} data-test="profile-image"/>
         <div className="s-userinfo">
             <div className="username-area">
-                <p>{userName}</p>
-                <ion-icon name="pencil-outline" onClick={() => changeNickname(userName, setuserName)}></ion-icon>
+                <p data-test="name">{userName}</p> 
+                <ion-icon name="pencil-outline" onClick={() => changeNickname(userName, setuserName)} data-test="edit-name"></ion-icon>
             </div>
             <p>{nickname}</p>
         </div>

@@ -11,7 +11,7 @@ const CommentArea = ({randomUser, likes}) => {
     <div className="comment-area">
         <img src={randomUser.userAvatar} style={{width:"20px"}} alt="avatar do usuario"/>
         <span>
-            Curtido por <b>{randomUser.user}</b> e <strong> outras {likes.toLocaleString('pt-BR')} pessoas</strong>
+            Curtido por <b>{randomUser.user}</b> e <strong> outras <span data-test="likes-number">{likes.toLocaleString('pt-BR')}</span> pessoas</strong>
         </span>
     </div>
 )}
