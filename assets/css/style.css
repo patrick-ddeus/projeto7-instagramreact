@@ -217,6 +217,8 @@ a {
 
 .s-userinfo-area img {
     margin-right: 17px;
+    border-radius: 50%;
+    max-width:56px;
 }
 
 .s-userinfo {
@@ -314,6 +316,10 @@ a {
 
 .post-img{
     position:relative;
+}
+
+.post-image{
+    position:relative;
     z-index: 1;
 }
 
@@ -321,17 +327,14 @@ a {
     font-size:160px;
     color:white;
     position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    transition:scale .4s ease;
-    /* opacity:0; */
-    scale:.9;
-    z-index:-1
+    top:37%;
+    left:37%;
+    z-index:-1;
 }
 
 .post-img .big-heart.heartStyle{
-    z-index:1;
+    animation: scale-animation 0.4s ease;
+    z-index:2;
 }
 
 .post-img .big-heart ion-icon{
@@ -341,7 +344,6 @@ a {
     position:relative;
 }
 .post-img .big-heart.heartStyle ion-icon{
-    color:red;
     opacity:1;
     transition:color .6s; 
 }
@@ -396,6 +398,15 @@ a {
 /* .save-icon.salvo{
     /* color:blue;
 } */
+
+@keyframes scale-animation {
+    from{
+        transform:scale(.2);
+    }
+    to{
+        transform:scale(1)
+    }
+}
 
 /* Media Querry */
 
@@ -494,6 +505,7 @@ a {
     #menu-bottom {
         display: block;
         position: fixed;
+        z-index:999;
         bottom: 0;
         left: 0;
         width: 100vw;
