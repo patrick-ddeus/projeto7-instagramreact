@@ -1,13 +1,13 @@
 import React from "react";
 import Stories from "./Stories";
 import Posts from "./Posts";
-import MenuList from "./MainComponents/MenuItems";
+import MenuList from "./MainComponents/MenuList";
 import MenuItem from "./MainComponents/MenuItem";
 import MenuContainer from "./MainComponents/MainContainer";
 
 const Main = () => (
     <main id="main">
-        
+
         <MenuContainer >
             <Stories />
             <Posts />

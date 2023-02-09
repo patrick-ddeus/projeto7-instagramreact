@@ -1,7 +1,7 @@
 import React from "react";
 import SUGGESTION_HANDLER from "../Models/SuggestionStore";
 
-const SuggestList = () => (
+const SuggestItems = () => (
     SUGGESTION_HANDLER.getSuggestions().map((suggestion) => (
         <li className="suggestions-li" key={suggestion.user}>
             <div className="suggestion-user">
@@ -16,4 +16,4 @@ const SuggestList = () => (
     ))
 )
 
-export default SuggestList
+export default SuggestItems
