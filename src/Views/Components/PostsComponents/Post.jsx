@@ -4,29 +4,32 @@ import IconsArea from "./IconsArea";
 import LikeButton from "./LikeButton"
 import HeaderPost from "./HeaderPost"
 
-function handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, likes) {
-    setLiked(!liked) // true
-    setKeepLiked(true)
-    if (!liked) {
-        if (Number(likes) === Number(postLikes)) {
-            setPostLikes(Number(postLikes) + 1)
-        }
-        setTimeout(() => {
-            setLiked(liked) // false
-        }, 500)
-    }
-}
 
 const Post = ({ randomUser, randomPost, likes }) => {
     const [liked, setLiked] = useState(false);
     const [keepLiked, setKeepLiked] = useState(false)
-    let [postLikes, setPostLikes] = useState(likes)
+    const [postLikes, setPostLikes] = useState(likes)
+
+
+    function handleHeart() {
+        setLiked(!liked) // true
+        setKeepLiked(true)
+        if (!liked) {
+            // Verifica se o número de likes do estado é igual o número de likes inicial
+            if (Number(likes) === Number(postLikes)) {
+                setPostLikes(Number(postLikes) + 1)
+            }
+            setTimeout(() => {
+                setLiked(liked) // false
+            }, 500)
+        }
+    }
 
     return (
         <article className="posts" data-test="post">
             <HeaderPost randomuser={randomUser} />
 
-            <div className="post-img" onDoubleClick={() => handleHeart(setLiked, liked, setKeepLiked, setPostLikes, postLikes, likes)}>
+            <div className="post-img" onDoubleClick={() => handleHeart()}>
                 <picture>
                     <img className="post-image" src={randomPost} alt="instagram-post" data-test="post-image" />
                     <LikeButton liked={liked} setLiked={setLiked} />

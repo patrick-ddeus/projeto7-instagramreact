@@ -327,25 +327,21 @@ a {
     font-size:160px;
     color:white;
     position:absolute;
-    top:37%;
-    left:37%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
     z-index:-1;
 }
 
 .post-img .big-heart.heartStyle{
     animation: scale-animation 0.4s ease;
+    transform:translate(-50%, -50%);
     z-index:2;
 }
 
 .post-img .big-heart ion-icon{
     color:white;
-    opacity:0;
-    transition:color .6s;
     position:relative;
-}
-.post-img .big-heart.heartStyle ion-icon{
-    opacity:1;
-    transition:color .6s; 
 }
 
 .posts:first-child {
@@ -401,10 +397,10 @@ a {
 
 @keyframes scale-animation {
     from{
-        transform:scale(.2);
+        transform:translate(-50%, -50%) scale(.2);
     }
     to{
-        transform:scale(1)
+        transform:translate(-50%, -50%) scale(1)
     }
 }
 

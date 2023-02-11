@@ -7,7 +7,6 @@ import MenuContainer from "./MainComponents/MainContainer";
 
 const Main = () => (
     <main id="main">
-
         <MenuContainer >
             <Stories />
             <Posts />
